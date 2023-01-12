@@ -13,17 +13,17 @@ static void	inorder(t_tree *tree, void (*f)(void *))
 {
 	if (tree == NULL)
 		return ;
-	preorder(tree->left, f);
+	inorder(tree->left, f);
 	f(tree->value);
-	preorder(tree->right, f);
+	inorder(tree->right, f);
 }
 
 static void	postorder(t_tree *tree, void (*f)(void *))
 {
 	if (tree == NULL)
 		return ;
-	preorder(tree->left, f);
-	preorder(tree->right, f);
+	postorder(tree->left, f);
+	postorder(tree->right, f);
 	f(tree->value);
 }
 
